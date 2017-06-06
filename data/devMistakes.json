@@ -2,7 +2,7 @@
   {
     "message": "Why won't this CSS change?!\n\nRestart server? Nope.\n\n`rm -rf` everything? Nope.\n\nRebuild dev env? Nope\n\nOh wait, I was looking at production.",
     "author": {
-      "name": "Mike Countermarsh",
+      "name": "Mike Coutermarsh",
       "link": "https://twitter.com/mscccc"
     }
   },

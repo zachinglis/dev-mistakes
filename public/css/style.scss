@@ -1,3 +1,16 @@
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+$clr_text: rgb(255, 255, 255);
+$clr_bg: rgb(4, 109, 139);
+$clr_code: rgb(102, 190, 215);
+$clr_link: rgb(201, 228, 236);
+
 html,
 body {
   height: 100%;
@@ -8,6 +21,8 @@ body {
   padding: 0;
   font-family: 'Crete Round', serif;
   font-size: 20px;
+  background-color: $clr_bg;
+  color: $clr_text;
 }
 
 .wrapper {
@@ -24,17 +39,26 @@ body {
 
   .inner {
     width: 400px;
+    position: relative;
   }
 }
 
 .actions {
+  position: absolute;
+  bottom: 80px;
   text-align: center;
 }
 
 .button {
   cursor: pointer;
+  outline: none;
   display: inline-block;
-  border: 0.5px solid #ccc;
+  border: 2px solid $clr_text;
+  background-color: transparent;
+  color: $clr_text;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
   margin: 20px 0;
   padding: 10px 20px;
   border-radius: 4px;
@@ -42,11 +66,16 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  @include transition(color 0.3s ease-in);
+  color: $clr_link;
+
+  &:hover {
+    color: $clr_text;
+  }
 }
 
 code {
-  background: rgb(239, 236, 252);
+  background: $clr_code;
   padding: 4px 8px;
   border-radius: 4px;
   margin-right: 2px;
@@ -58,8 +87,10 @@ code {
   bottom: 20px;
   width: 100%;
   text-align: center;
+  font-size: 16px;
 
-  &, a {
-    color: rgb(204, 204, 204);
+  & {
+    @include transition(color 0.3s ease-in);
+    color: $clr_link;
   }
 }

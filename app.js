@@ -16,6 +16,15 @@ var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
+app.locals.site = {
+  title: 'Dev Mistakes',
+}
+
+app.locals.project = {
+  github: 'https://github.com/zachinglis/dev-mistakes/'
+}
+
+
 // view engine setup
 
 app.set('views', path.join(__dirname, 'views'));

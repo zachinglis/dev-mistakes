@@ -6,8 +6,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Crete Round', serif;
-  font-size: 20px;
-  line-height: 27px; }
+  font-size: 20px; }
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px; }
 
 .frame {
   height: 100%;

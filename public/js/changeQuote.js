@@ -1,3 +1,14 @@
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   const quoteEl         = document.querySelector('.quote')
   const authorEl        = document.querySelector('.quote--author')
@@ -21,10 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     axios.get(url)
       .then((response) => {
         const quote = response.data
-        console.log(quote.author)
 
         quoteEl.setAttribute('data-lastId', quote.id)
-        quoteEl.innerHTML = quote.message
+        quoteEl.innerHTML = marked(quote.message)
 
         let authorHTML = `― ${quote.author.name}`
 

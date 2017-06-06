@@ -36,6 +36,12 @@ body {
 a {
   color: #00B7FF; }
 
+code {
+  background: #efecfc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 2px; }
+
 .madeby {
   position: absolute;
   bottom: 20px;

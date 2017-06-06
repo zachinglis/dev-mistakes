@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title Developer Mistakes
+    block css
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Crete+Round')
+      link(rel='stylesheet', href='/css/style.css')
+    block js
+      script(src='/components/axios/dist/axios.min.js')
+      script(src='/js/changeQuote.js')
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')
+  body
+    block content
+    .madeby
+      | Made by&nbsp;
+      a(href='https://twitter.com/zachinglis') Zach Inglis,
+      |&nbsp;
+      a(href='https://twitter.com/teawithlemon') Laura Sanders
+      |&nbsp;&amp;&nbsp;
+      a(href='https://twitter.com/mscccc') Mike Coutermarsh

@@ -3,7 +3,11 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
-    title Developer Mistakes
+    title 
+      if title
+        = title
+        = ' | '
+      = site.title
     block css
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Crete+Round')
       link(rel='stylesheet', href='/css/style.css')

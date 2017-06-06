@@ -40,4 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   getQuote()
   refreshButtonEl.onclick = getQuote
+  refreshButtonEl.focus()
 })

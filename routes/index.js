@@ -9,6 +9,4 @@ router.get('/about', (req, res) => {
   res.render('about')
 })
 
-// TODO: about
-
 module.exports = router

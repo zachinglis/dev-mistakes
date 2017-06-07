@@ -84,6 +84,13 @@ body {
       color: $clr_bg;
     }
   }
+
+  &.disabled, &:disabled:hover {
+    cursor: default;
+    border-color: $clr_link;
+    color: $clr_link;
+    opacity: 0.2;
+  }
 }
 
 a {

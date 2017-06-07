@@ -60,6 +60,11 @@ body {
     .button--primary:hover {
       background-color: white;
       color: #046d8b; }
+  .button.disabled, .button:disabled:hover {
+    cursor: default;
+    border-color: #c9e4ec;
+    color: #c9e4ec;
+    opacity: 0.2; }
 
 a {
   -webkit-transition: color 0.3s ease-in;

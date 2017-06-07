@@ -4,8 +4,17 @@ const router    = express.Router()
 const data      = require('../data/devMistakes.json')
 
 router.get('/quote', (req, res) => {
-  const quotes = data.slice(0) // Clone array so we don't modify it
+  const quotes = data.slice() // Clone array so we don't modify it
   const quote  = randomQuote(quotes)
+
+  res.json(quote)
+})
+
+router.get('/quote/:id', (req, res) => {
+  const { id } = req.params
+
+  const quotes = data.slice() // Clone array so we don't modify it
+  const quote  = returnQuote(quotes[id])
 
   res.json(quote)
 })
@@ -28,9 +37,14 @@ randomQuote = (quotes) => {
   const randomIndex = Math.floor(Math.random() * quotes.length)
   let   quote = quotes[randomIndex]
 
+  return returnQuote(quote)
+}
+
+returnQuote = (quote, req) => {
   return Object.assign(quote,
   {
     id: data.indexOf(quote)
   })
 }
+
 module.exports = router

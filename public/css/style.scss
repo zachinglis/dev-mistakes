@@ -50,19 +50,40 @@ body {
 }
 
 .button {
+  @include transition(all 0.3s ease-in);
   cursor: pointer;
   outline: none;
   display: inline-block;
-  border: 2px solid $clr_text;
+  border: 2px solid $clr_link;
   background-color: transparent;
-  color: $clr_text;
+  color: $clr_link;
   font-family: inherit;
   font-size: 16px;
   font-weight: bold;
+  width: 100px;
   margin: 20px 0;
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
+
+  + .button {
+    margin-left: 20px;
+  }
+
+  &:hover {
+    border-color: $clr_text;
+    color: $clr_text;
+  }
+
+  &--primary {
+    background-color: $clr_link;
+    color: $clr_bg;
+
+    &:hover {
+      background-color: $clr_text;
+      color: $clr_bg;
+    }
+  }
 }
 
 a {
@@ -85,12 +106,19 @@ code {
   // FIX on mobile
   position: absolute;
   bottom: 20px;
-  width: 100%;
-  text-align: center;
+  left: 25%;
+  width: 50%;
+  // margin: 0 auto;
+  // text-align: center;
   font-size: 16px;
 
   & {
     @include transition(color 0.3s ease-in);
     color: $clr_link;
   }
+}
+
+.right {
+  float: right;
+  text-align: right;
 }
